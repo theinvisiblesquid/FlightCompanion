@@ -1,0 +1,186 @@
+plane:
+ms - hex
+acr - registration
+acd - make
+act - model
+acff - age
+th1 - photo (prepend "https://cdn.radarbox24.com/photo/")
+
+flight:
+cs - flight num
+fnia - iata fn
+fnic - icao fn
+alna - airline
+
+dep:
+aporgic - dep icao
+aporgia - dep iata
+aporgna - dep name
+deps - dep planned time
+depe - dep estimated time
+aporgtzns - timezone
+
+arr:
+apdstic - arr icao
+apdstia - arr iata
+apdstna - arr name
+arrs - arr planned time
+arre - arr estimated time
+apdsttzns - arr timezone
+
+gen:
+deptaxi
+arrtaxi
+progress
+duration
+distance
+
+
+SQL STATEMENTS:
+
+Antenna table:
+'CREATE TABLE `aircraft` (
+  `flight_id` int(11) NOT NULL AUTO_INCREMENT,
+  `hex` varchar(20) DEFAULT NULL,
+  `squawk` int(11) DEFAULT NULL,
+  `flight` varchar(20) DEFAULT NULL,
+  `lat` double DEFAULT NULL,
+  `lon` double DEFAULT NULL,
+  `nucp` int(11) DEFAULT NULL,
+  `seen_pos` double DEFAULT NULL,
+  `altitude` int(11) DEFAULT NULL,
+  `vert_rate` int(11) DEFAULT NULL,
+  `track` int(11) DEFAULT NULL,
+  `speed` int(11) DEFAULT NULL,
+  `messages` int(11) DEFAULT NULL,
+  `seen` double DEFAULT NULL,
+  `rssi` double DEFAULT NULL,
+  PRIMARY KEY (`flight_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8'
+
+Flight table (central):
+
+CREATE TABLE flights (
+flight_id int NOT NULL AUTO_INCREMENT,
+fn_id varchar(20) DEFAULT NULL,
+ac_id varchar(20) DEFAULT NULL,
+dep_id varchar(10) DEFAULT NULL,
+arr_id varchar(10) DEFAULT NULL,
+PRIMARY KEY (flight_id),
+FOREIGN KEY (fn_id) REFERENCES flnum(fn_id),
+FOREIGN KEY (ac_id) REFERENCES aircraft(ac_id),
+FOREIGN KEY (dep_id) REFERENCES dep(dep_id),
+FOREIGN KEY (arr_id) REFERENCES arr(arr_id)
+)ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8
+
+
+Flight num :
+
+CREATE TABLE flnum (
+fn_id varchar(20) NOT NULL,
+fn_iata varchar(20) DEFAULT NULL,
+fn_icao varchar(20) DEFAULT NULL,
+dep_time varchar(100) DEFAULT NULL,
+dep_date varchar(100) DEFAULT NULL,
+dep_taxi int DEFAULT NULL,
+arr_time varchar(100) DEFAULT NULL,
+arr_date varchar(100) DEFAULT NULL,
+arr_taxi int DEFAULT NULL,
+distance int DEFAULT NULL,
+PRIMARY KEY (flight_id)
+)ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8
+
+Aircraft:
+
+CREATE TABLE aircraft (
+ac_id varchar(20) NOT NULL,
+ac_reg varchar(50) DEFAULT NULL,
+ac_make varchar(100) DEFAULT NULL,
+ac_model varchar(100) DEFAULT NULL,
+ac_photo varchar(255) DEFAULT NULL,
+ac_airline varchar(100) DEFAULT NULL,
+PRIMARY KEY (ac_id)
+)ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8
+
+
+dep:
+
+CREATE TABLE dep (
+dep_id varchar(10) DEFAULT NULL,
+dep_iata varchar(10) DEFAULT NULL,
+dep_name varchar(255) DEFAULT NULL,
+dep_tz varchar(100) DEFAULT NULL,
+PRIMARY KEY (dep_id)
+)ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8
+
+
+arr:
+
+CREATE TABLE arr (
+arr_id varchar(10) DEFAULT NULL,
+arr_iata varchar(10) DEFAULT NULL,
+arr_name varchar(255) DEFAULT NULL,
+arr_tz varchar(100) DEFAULT NULL,
+PRIMARY KEY (arr_id)
+)ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8
+
+
+
+
+
+
+
+
+
+CREATE TABLE flnum (
+fn_id varchar(20) NOT NULL,
+fn_iata varchar(20) DEFAULT NULL,
+fn_icao varchar(20) DEFAULT NULL,
+dep_time varchar(100) DEFAULT NULL,
+dep_date varchar(100) DEFAULT NULL,
+dep_taxi int DEFAULT NULL,
+arr_time varchar(100) DEFAULT NULL,
+arr_date varchar(100) DEFAULT NULL,
+arr_taxi int DEFAULT NULL,
+distance int DEFAULT NULL,
+PRIMARY KEY (fn_id)
+)ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+CREATE TABLE aircraft (
+ac_id varchar(20) NOT NULL,
+ac_reg varchar(50) DEFAULT NULL,
+ac_make varchar(100) DEFAULT NULL,
+ac_model varchar(100) DEFAULT NULL,
+ac_photo varchar(255) DEFAULT NULL,
+ac_airline varchar(100) DEFAULT NULL,
+PRIMARY KEY (ac_id)
+)ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+CREATE TABLE dep (
+dep_id varchar(10) DEFAULT NULL,
+dep_iata varchar(10) DEFAULT NULL,
+dep_name varchar(255) DEFAULT NULL,
+dep_tz varchar(100) DEFAULT NULL,
+PRIMARY KEY (dep_id)
+)ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+CREATE TABLE arr (
+arr_id varchar(10) DEFAULT NULL,
+arr_iata varchar(10) DEFAULT NULL,
+arr_name varchar(255) DEFAULT NULL,
+arr_tz varchar(100) DEFAULT NULL,
+PRIMARY KEY (arr_id)
+)ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+CREATE TABLE flights (
+flight_id int NOT NULL AUTO_INCREMENT,
+fn_id varchar(20) DEFAULT NULL,
+ac_id varchar(20) DEFAULT NULL,
+dep_id varchar(10) DEFAULT NULL,
+arr_id varchar(10) DEFAULT NULL,
+PRIMARY KEY (flight_id),
+CONSTRAINT FK_FN FOREIGN KEY (fn_id) REFERENCES flnum(fn_id),
+CONSTRAINT FK_AC FOREIGN KEY (ac_id) REFERENCES aircraft(ac_id),
+CONSTRAINT FK_DEP FOREIGN KEY (dep_id) REFERENCES dep(dep_id),
+CONSTRAINT FK_ARR FOREIGN KEY (arr_id) REFERENCES arr(arr_id)
+)ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;

@@ -1,0 +1,8 @@
+{ "now" : 1572023270.9,
+  "messages" : 999,
+  "aircraft" : [
+    {"hex":"4005a5","squawk":"4215","flight":"BAW178  ","lat":51.942009,"lon":-9.930620,"nucp":7,"seen_pos":2.8,"altitude":37000,"vert_rate":0,"track":93,"speed":586,"messages":458,"seen":0.4,"rssi":-33.0},
+    {"hex":"40661e","squawk":"3604","altitude":2150,"messages":144,"seen":0.7,"rssi":-33.7},
+    {"hex":"4ca6fd","squawk":"7657","flight":"RYR60VB ","lat":51.770920,"lon":-8.449600,"nucp":5,"seen_pos":0.0,"altitude":2050,"vert_rate":-832,"track":341,"speed":157,"messages":397,"seen":0.0,"rssi":-33.8}
+  ]
+}

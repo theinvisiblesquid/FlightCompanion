@@ -1,0 +1,8 @@
+{ "now" : 1572023330.9,
+  "messages" : 1523,
+  "aircraft" : [
+    {"hex":"4005a5","squawk":"4215","flight":"BAW178  ","lat":51.932606,"lon":-9.656276,"nucp":7,"seen_pos":0.1,"altitude":37000,"vert_rate":0,"track":93,"speed":584,"messages":769,"seen":0.1,"rssi":-32.1},
+    {"hex":"40661e","squawk":"3604","flight":"GJAFT   ","altitude":3050,"messages":202,"seen":1.0,"rssi":-32.9},
+    {"hex":"4ca6fd","squawk":"7657","flight":"RYR60VB ","lat":51.802120,"lon":-8.468018,"nucp":5,"seen_pos":8.6,"altitude":1400,"vert_rate":-768,"track":341,"speed":130,"messages":552,"seen":8.3,"rssi":-34.7}
+  ]
+}
