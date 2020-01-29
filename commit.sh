@@ -1,4 +1,4 @@
 git add .
 nano ./commit.md
 git commit -F ./commit.md
-git push https://theinvisiblesquid@github.com:/theinvisiblesquid/FlightCompanion
+git push -f https://theinvisiblesquid@github.com:/theinvisiblesquid/FlightCompanion
