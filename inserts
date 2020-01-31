@@ -1,0 +1,9 @@
+INSERT INTO aircraft VALUES (%s, %s, %s, %s, %s, %s)
+
+INSERT INTO flnum VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+
+INSERT INTO dep VALUES (%s, %s, %s, %s)
+
+INSERT INTO arr VALUES (%s, %s, %s, %s)
+
+INSERT INTO flights (fn_id, ac_id, dep_id, arr_id) VALUES (%s, %s, %s, %s)

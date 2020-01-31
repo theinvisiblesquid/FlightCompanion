@@ -1,40 +1,63 @@
 import json, urllib, pymysql
 from bs4 import BeautifulSoup
+# flask is similar to jsp's in java, it allows you to set up a URL's that when visited, run some python code and return a json object
 from flask import Flask
 from flask_restful import Resource, Api
 
+# not sure what this is really, but it won't work without it. I think it's just setting up the app
 app = Flask(__name__)
 api = Api(app)
 
 
+# defining a flights class to select data from my db
 class Flights(Resource):
+    #def is for creating methods (same as java), runs some code, returns a value
     def get(self):
-        # Connect to the database
+        # setting up the connection to the database
         connection = pymysql.connect(host='localhost',
                                      user='flightcompanion',
                                      password='fc1234',
                                      db='flightcompanion',
                                      charset='utf8mb4',
                                      cursorclass=pymysql.cursors.DictCursor)
-
+        # put inside try catch in case of errors
         try:
+            # connection and any subsequent SQL will run inside this with statement
+            # cursor is essentially the variable storing our connection object, and we can do sql stuff with the cursor object
             with connection.cursor() as cursor:
                 # https://stackoverflow.com/questions/43796423/python-converting-mysql-query-result-to-json
-                q = cursor.execute('select hex, flight, lat, lon from aircraft')
+
+                # execute the following SQL statement
+                cursor.execute('select hex, flight, lat, lon from adsb')
+
+                # fetch all the returned values and put them in the result variable
                 result = cursor.fetchall()
+
+
                 print('result: ', result)
+                '''
+                # get the row headers, these are the column names
                 row_head = [x[0] for x in cursor.description]
                 connection.close()
+                '''
         finally:
             print('finally')
 
+        '''
         print('row headers: ', row_head)
+
+        # init json object that we will populate and return
         json_data = []
+
+        # for each loop
         for r in result:
+            # append the result onto the end of the json object
+            # dict(zip(row_head, r)) haven't a notion what this does, but do it
             json_data.append(dict(zip(row_head, r)))
 
         print('json data: ', json_data)
         print('dumped: ', json.dumps(json_data))
+        '''
 
         return result
 
@@ -73,10 +96,12 @@ class RBInfo(Resource):
                     page = urllib.request.urlopen(req).read()
                     # r = requests.get(link)
                     # print(r)
-                    soup = BeautifulSoup(page, 'lxml')
+                    soup = BeautifulSoup(page)
                     s = soup.find_all('script')
                     init = str(s[8])
+                    print('init: ', init)
                     j = init[20:(len(init) - 10)]
+                    print('json: ', j)
                     d = json.loads(j)
                     print(d)
                 except FileNotFoundError:
@@ -105,7 +130,7 @@ def flight(flight):
         page = urllib.request.urlopen(req).read()
         # r = requests.get(link)
         # print(r)
-        soup = BeautifulSoup(page, 'lxml')
+        soup = BeautifulSoup(page)
         s = soup.find_all('script')
         print('script = ', s)
         init = str(s[8])

@@ -2,7 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70deb2c8-e1bf-4e39-9b12-094619dd7b7f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/adam.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inserts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/playground.py" beforeDir="false" afterPath="$PROJECT_DIR$/playground.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/populater.py" beforeDir="false" afterPath="$PROJECT_DIR$/populater.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reader.py" beforeDir="false" afterPath="$PROJECT_DIR$/reader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scratchpad.txt" beforeDir="false" afterPath="$PROJECT_DIR$/scratchpad.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,7 +29,23 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand />
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="flightcompanion@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="flightcompanion@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="flightcompanion@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="flightcompanion: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+    </expand>
     <select />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -33,6 +58,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="$PROJECT_DIR$/.idea" />
+      </set>
+    </option>
+  </component>
   <component name="ProjectId" id="1X4zKRSzRAn7ya1gqNvqorXkVna" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -41,15 +73,138 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="ignore_missing_gitignore" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="MTConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
+  </component>
+  <component name="RunManager" selected="Python.reader">
+    <configuration name="api" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="FlightCompanion" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/api.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="playground" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="FlightCompanion" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/playground.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="populater" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="FlightCompanion" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/populater.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="reader" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="FlightCompanion" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/reader.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.reader" />
+        <item itemvalue="Python.api" />
+        <item itemvalue="Python.playground" />
+        <item itemvalue="Python.populater" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:flightcompanion@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:flightcompanion@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@22b5aa3f" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
+            </expand>
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -61,7 +216,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1580320090541</updated>
-      <workItem from="1580320092998" duration="1132000" />
+      <workItem from="1580320092998" duration="2287000" />
+      <workItem from="1580327656958" duration="1036000" />
+      <workItem from="1580328704504" duration="14941000" />
     </task>
     <servers />
   </component>
@@ -69,13 +226,55 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="560" y="169" key="#SQL_Dialects" timestamp="1580320357403">
+    <state x="560" y="169" key="#SQL_Dialects" timestamp="1580483597912">
       <screen x="0" y="24" width="1920" height="993" />
     </state>
-    <state x="560" y="169" key="#SQL_Dialects/0.24.1920.993@0.24.1920.993" timestamp="1580320357403" />
-    <state x="454" y="142" key="SettingsEditor" timestamp="1580320122786">
+    <state x="560" y="169" key="#SQL_Dialects/0.24.1920.993@0.24.1920.993" timestamp="1580483597912" />
+    <state x="560" y="169" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1580328594896">
       <screen x="0" y="24" width="1920" height="993" />
     </state>
-    <state x="454" y="142" key="SettingsEditor/0.24.1920.993@0.24.1920.993" timestamp="1580320122786" />
+    <state x="560" y="169" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.24.1920.993@0.24.1920.993" timestamp="1580328594896" />
+    <state x="648" y="299" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1580331750947">
+      <screen x="0" y="24" width="1920" height="993" />
+    </state>
+    <state x="648" y="299" key="#com.intellij.fileTypes.FileTypeChooser/0.24.1920.993@0.24.1920.993" timestamp="1580331750947" />
+    <state x="723" y="137" key="#xdebugger.evaluate" timestamp="1580483307510">
+      <screen x="0" y="24" width="1920" height="993" />
+    </state>
+    <state x="723" y="137" key="#xdebugger.evaluate/0.24.1920.993@0.24.1920.993" timestamp="1580483307510" />
+    <state width="1874" height="428" key="GridCell.Tab.0.bottom" timestamp="1580483550299">
+      <screen x="0" y="24" width="1920" height="993" />
+    </state>
+    <state width="1874" height="428" key="GridCell.Tab.0.bottom/0.24.1920.993@0.24.1920.993" timestamp="1580483550299" />
+    <state width="1874" height="428" key="GridCell.Tab.0.center" timestamp="1580483550297">
+      <screen x="0" y="24" width="1920" height="993" />
+    </state>
+    <state width="1874" height="428" key="GridCell.Tab.0.center/0.24.1920.993@0.24.1920.993" timestamp="1580483550297" />
+    <state width="1874" height="428" key="GridCell.Tab.0.left" timestamp="1580483550296">
+      <screen x="0" y="24" width="1920" height="993" />
+    </state>
+    <state width="1874" height="428" key="GridCell.Tab.0.left/0.24.1920.993@0.24.1920.993" timestamp="1580483550296" />
+    <state width="1874" height="428" key="GridCell.Tab.0.right" timestamp="1580483550298">
+      <screen x="0" y="24" width="1920" height="993" />
+    </state>
+    <state width="1874" height="428" key="GridCell.Tab.0.right/0.24.1920.993@0.24.1920.993" timestamp="1580483550298" />
+    <state x="420" y="172" key="SettingsEditor" timestamp="1580328822938">
+      <screen x="0" y="24" width="1920" height="993" />
+    </state>
+    <state x="420" y="172" key="SettingsEditor/0.24.1920.993@0.24.1920.993" timestamp="1580328822938" />
+    <state x="689" y="241" width="540" height="540" key="StructurePopup" timestamp="1580481133653">
+      <screen x="0" y="24" width="1920" height="993" />
+    </state>
+    <state x="689" y="241" width="540" height="540" key="StructurePopup/0.24.1920.993@0.24.1920.993" timestamp="1580481133653" />
+    <state x="623" y="220" width="672" height="678" key="search.everywhere.popup" timestamp="1580332187476">
+      <screen x="0" y="24" width="1920" height="993" />
+    </state>
+    <state x="623" y="220" width="672" height="678" key="search.everywhere.popup/0.24.1920.993@0.24.1920.993" timestamp="1580332187476" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/FlightCompanion$populater.coverage" NAME="populater Coverage Results" MODIFIED="1580327868018" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/FlightCompanion$api.coverage" NAME="api Coverage Results" MODIFIED="1580386689357" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/FlightCompanion$playground.coverage" NAME="playground Coverage Results" MODIFIED="1580331481003" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/FlightCompanion$reader.coverage" NAME="reader Coverage Results" MODIFIED="1580483391077" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
