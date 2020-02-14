@@ -1,17 +1,22 @@
-import json, urllib, pymysql
+import json, urllib, pymysql, logging
+from urllib import request
 from bs4 import BeautifulSoup
 # flask is similar to jsp's in java, it allows you to set up a URL's that when visited, run some python code and return a json object
-from flask import Flask
+from flask import Flask, jsonify, request
 from flask_restful import Resource, Api
 
+
+
 # not sure what this is really, but it won't work without it. I think it's just setting up the app
+import populater
+
 app = Flask(__name__)
 api = Api(app)
 
 
 # defining a flights class to select data from my db
 class Flights(Resource):
-    #def is for creating methods (same as java), runs some code, returns a value
+    # def is for creating methods (same as java), runs some code, returns a value
     def get(self):
         # setting up the connection to the database
         connection = pymysql.connect(host='localhost',
@@ -33,7 +38,6 @@ class Flights(Resource):
                 # fetch all the returned values and put them in the result variable
                 result = cursor.fetchall()
 
-
                 print('result: ', result)
                 '''
                 # get the row headers, these are the column names
@@ -43,28 +47,66 @@ class Flights(Resource):
         finally:
             print('finally')
 
-        '''
-        print('row headers: ', row_head)
-
-        # init json object that we will populate and return
-        json_data = []
-
-        # for each loop
-        for r in result:
-            # append the result onto the end of the json object
-            # dict(zip(row_head, r)) haven't a notion what this does, but do it
-            json_data.append(dict(zip(row_head, r)))
-
-        print('json data: ', json_data)
-        print('dumped: ', json.dumps(json_data))
-        '''
-
+        connection.close()
         return result
 
+@app.route('/flight/<flight>', methods=['GET'])
+def flight(flight):
+    print(flight)
 
-class RBInfo(Resource):
+    connection = pymysql.connect(host='localhost',
+                                 user='flightcompanion',
+                                 password='fc1234',
+                                 db='flightcompanion',
+                                 charset='utf8mb4',
+                                 cursorclass=pymysql.cursors.DictCursor)
+
+    try:
+        with connection.cursor() as cursor:
+            cursor.execute('select fn_id, ac_id, dep_id, arr_id from flights where fn_id = %s', flight)
+            fl = cursor.fetchall()
+            try:
+                flight_record = fl[0]
+                print('flight: ', flight)
+            except IndexError:
+                pass
+            cursor.execute('select * from aircraft where ac_id = %s', flight_record['ac_id'])
+            ac = cursor.fetchall()
+            try:
+                aircraft = ac[0]
+                print('aircraft: ', aircraft)
+            except IndexError:
+                pass
+            cursor.execute('select * from flnum where fn_id = %s', flight_record['fn_id'])
+            fn = cursor.fetchall()
+            try:
+                flight_num = fn[0]
+                print('flight num: ', flight_num)
+            except IndexError:
+                pass
+            print('arr id: ', flight_record['arr_id'])
+            cursor.execute('select * from arr where arr_id = %s', flight_record['arr_id'])
+            arr = cursor.fetchall()
+            arrival = arr[0]
+            cursor.execute('select * from dep where dep_id = %s', flight_record['dep_id'])
+            dep = cursor.fetchall()
+            departure = dep[0]
+    finally:
+        connection.close()
+
+    flight_dict = {'flight': flight_record, 'aircraft': aircraft, 'flight_num': flight_num, 'arrival': arrival,
+                   'departure': departure}
+    print(flight_dict)
+    link = (str(flight_dict['aircraft']['ac_photo']))
+    print(link)
+    if link[33: 37] == 'None':
+        flight_dict['aircraft']['ac_photo'] = None
+
+    print('flight dict: ', flight_dict)
+    return flight_dict
+
+class RecordedFlights(Resource):
     def get(self):
-        # Connect to the database
         connection = pymysql.connect(host='localhost',
                                      user='flightcompanion',
                                      password='fc1234',
@@ -72,84 +114,20 @@ class RBInfo(Resource):
                                      charset='utf8mb4',
                                      cursorclass=pymysql.cursors.DictCursor)
 
-        with connection.cursor() as cursor:
-            cursor.execute("select flight from aircraft;")
-            res = cursor.fetchall()
-            # print(row['hex'])
-            print(hex)
-            hdr = {
-                'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 '
-                              'Safari/537.11',
-                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-                'Accept-Charset': 'ISO-8859-1,utf-8;q=0.7,*;q=0.3',
-                'Accept-Encoding': 'none',
-                'Accept-Language': 'en-US,en;q=0.8',
-                'Connection': 'keep-alive'}
+class Endpoint(Resource):
+    def post(self):
+        # get json data
+        posted = request.get_json()
+        # return {'message': 'POST data received', 'json': posted}
 
-            for row in res:
-                fl = row['flight']
-                print(fl)
-                link = ("https://www.radarbox24.com/data/flights/" + fl)
-                print('Link: ', link)
-                req = urllib.request.Request(link, headers=hdr)
-                try:
-                    page = urllib.request.urlopen(req).read()
-                    # r = requests.get(link)
-                    # print(r)
-                    soup = BeautifulSoup(page)
-                    s = soup.find_all('script')
-                    init = str(s[8])
-                    print('init: ', init)
-                    j = init[20:(len(init) - 10)]
-                    print('json: ', j)
-                    d = json.loads(j)
-                    print(d)
-                except FileNotFoundError:
-                    print()
-
-            return d
+        populater.Populate.insertlive(None, posted)
+        populater.Populate.checkifexists(None, posted)
 
 
-@app.route('/flight/<flight>', methods=['GET'])
-def flight(flight):
-    print(flight)
+api.add_resource(Flights, '/live')
+api.add_resource(Endpoint, '/ep')
 
-    hdr = {
-        'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 '
-                      'Safari/537.11',
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-        'Accept-Charset': 'ISO-8859-1,utf-8;q=0.7,*;q=0.3',
-        'Accept-Encoding': 'none',
-        'Accept-Language': 'en-US,en;q=0.8',
-        'Connection': 'keep-alive'}
-
-    link = ("https://www.radarbox24.com/data/flights/" + flight)
-    print('Link: ', link)
-    req = urllib.request.Request(link, headers=hdr)
-    try:
-        page = urllib.request.urlopen(req).read()
-        # r = requests.get(link)
-        # print(r)
-        soup = BeautifulSoup(page)
-        s = soup.find_all('script')
-        print('script = ', s)
-        init = str(s[8])
-        j = init[20:(len(init) - 10)]
-        d = json.loads(j)
-        curr = d['current']
-        print('json from rb24: ', curr)
-        #for p in d['current']:
-            #print(p['acd'])
-
-    except FileNotFoundError:
-        print()
-
-    return curr
-
-
-api.add_resource(Flights, '/flights')
-api.add_resource(RBInfo, '/info')
 # api.add_resource(FlightInfo, '/flight/<flight>')
 
 if __name__ == '__main__':
-    app.run(port='5002')
+    app.run(host='127.0.0.1', port='5002')

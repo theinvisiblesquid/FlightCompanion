@@ -187,5 +187,14 @@ CONSTRAINT FK_ARR FOREIGN KEY (arr_id) REFERENCES arr(arr_id)
 
 
 
+select flights.fn_id, flights.ac_id, flights.dep_id, flights.arr_id, dep.dep_name, dep.dep_tz,
+       arr.arr_name, arr.arr_tz, aircraft.ac_reg, aircraft.ac_make, aircraft.ac_model, aircraft.ac_airline
+from flights
+INNER JOIN dep ON flights.dep_id = dep.dep_id
+INNER JOIN arr ON flights.arr_id = arr.arr_id
+INNER JOIN aircraft on flights.ac_id = aircraft.ac_id;
+
+
+
 
 {'fid': 1383876391, 'svd': 1580368916618, 'onflights': True, 'acr': None, 'act': None, 'acd': None, 'ms': None, 'th1': None, 'ph1': None, 'phu1': None, 'th2': None, 'ph2': None, 'phu2': None, 'bl': False, 'cs': None, 'cc': None, 'fnia': 'BA178', 'fnic': 'BAW178', 'alic': 'BAW', 'alia': 'BA', 'alna': 'British Airways', 'aporgla': 40.6398, 'aporglo': -73.7789, 'aporgic': 'KJFK', 'aporgia': 'JFK', 'aporgna': 'New York - John F Kennedy International Airport', 'aporgci': 'New York, NY', 'aporgst': 'New York', 'aporgco': 'United States', 'aporgtz': -5, 'aporgtzns': 'EST', 'aporgtznl': 'Eastern Standard Time', 'apdstla': 51.4706, 'apdstlo': -0.461941, 'apdstic': 'EGLL', 'apdstia': 'LHR', 'apdstna': 'London Heathrow Airport', 'apdstci': 'London', 'apdstst': 'England', 'apdstco': 'United Kingdom', 'apdsttz': 0, 'apdsttzns': 'GMT', 'apdsttznl': 'Greenwich Mean Time', 'apdivla': None, 'apdivlo': None, 'apdivic': None, 'apdivia': None, 'apdivna': None, 'apdivci': None, 'apdivst': None, 'apdivco': None, 'apdivtz': None, 'apdivtzns': None, 'apdivtznl': None, 'deps': '08:05', 'depsu': 1580389500, 'depe': None, 'depeu': None, 'depau': None, 'arrs': '19:50', 'arrsu': 1580413800, 'arre': '19:48', 'arreu': 1580413680, 'arrau': None, 'codeshares': 'AA6143,AY5478,EI8878,IB7377', 'cancel': None, 'depgate': None, 'depterm': '7', 'arrgate': None, 'arrterm': '5', 'depchec': None, 'arrbagg': None, 'depdels': None, 'depdeld': 'DPTS', 'depdelr': '6', 'arrdels': 'EY', 'arrdeld': 'ETA', 'arrdelr': '6', 'la': None, 'lo': None, 'alt': 0, 'hd': None, 'gs': None, 'vs': None, 'sq': None, 'so': 'SCHE', 'st': '', 'fdstdet': '', 'fst': '', 'mrgapdstna': 'London Heathrow Airport', 'mrgapdstsrc': 'DST', 'mrgaporgna': 'New York - John F Kennedy International Airport', 'mrgaporgsrc': 'ORG', 'mrgdeps': 1580371500, 'mrgarrs': 1580413800, 'wp': None, 'mrgdepu': 1580389500, 'mrgarru': 1580413800, 'lastlalot': 1580368916618, 'departure': None, 'departure_meta': '', 'arrival': None, 'arrival_meta': '', 'status': 'scheduled', 'delay': -4268, 'progress': 0, 'duration': '06h43m', 'durationType': 'scheduled', 'distance': 5626595, 'departureRelative': 'In 1 hour', 'arrivalRelative': 'In 7 hours', 'statusLabel': {'text': 'SCHEDULED IN 1h 11m', 'bg': '#6f807c', 'label': '#FFFFFF'}, 'depsts': 1580389500, 'depc': 1580371500, 'arrsts': 1580413800, 'arrc': 1580413800, 'day': '30 Jan', 'depdate': 'Thursday, January 30 2020', 'arrdate': 'Thursday, January 30 2020', 'replay': False, 'isFuture': True}

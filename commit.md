@@ -1,1 +1,2 @@
-splitting working code into classes & methods
+scraped data now being inserted into db
+need to expand api
