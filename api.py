@@ -5,8 +5,6 @@ from bs4 import BeautifulSoup
 from flask import Flask, jsonify, request
 from flask_restful import Resource, Api
 
-
-
 # not sure what this is really, but it won't work without it. I think it's just setting up the app
 import populater
 
@@ -49,6 +47,7 @@ class Flights(Resource):
 
         connection.close()
         return result
+
 
 @app.route('/flight/<flight>', methods=['GET'])
 def flight(flight):
@@ -105,6 +104,7 @@ def flight(flight):
     print('flight dict: ', flight_dict)
     return flight_dict
 
+
 class RecordedFlights(Resource):
     def get(self):
         connection = pymysql.connect(host='localhost',
@@ -114,19 +114,28 @@ class RecordedFlights(Resource):
                                      charset='utf8mb4',
                                      cursorclass=pymysql.cursors.DictCursor)
 
+        get = 'select fn_id, ac_id, dep_id, arr_id from flights;'
+        with connection.cursor() as cursor:
+            cursor.execute(get)
+            result = cursor.fetchall()
+
+        return result
+
 class Endpoint(Resource):
     def post(self):
         # get json data
         posted = request.get_json()
+        print('JSON incoming via POST:', posted)
         # return {'message': 'POST data received', 'json': posted}
 
         populater.Populate.insertlive(None, posted)
         populater.Populate.checkifexists(None, posted)
+        return {'message': 'POST received', 'data': posted}
 
 
 api.add_resource(Flights, '/live')
 api.add_resource(Endpoint, '/ep')
-
+api.add_resource(RecordedFlights, '/flights')
 # api.add_resource(FlightInfo, '/flight/<flight>')
 
 if __name__ == '__main__':

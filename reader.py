@@ -14,13 +14,15 @@ class Reader():
             with open(f_name) as json_data:
                 adsb = json.load(json_data)
 
+            print(adsb)
             # print information from file
-            Reader.readerlog(None, ('Current information of incoming ADS-B data: ', adsb))
+            # Reader.readerlog(None, ('Current information of incoming ADS-B data: ', adsb))
             # Reader.insertlive(None, adsb)
             # populater.Populate.checkifexists(None, adsb)
 
             res = requests.post('http://localhost:5002/ep', json=adsb)
             print('response from server:', res.text)
+
             time.sleep(1)
 
 

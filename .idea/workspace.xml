@@ -2,19 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70deb2c8-e1bf-4e39-9b12-094619dd7b7f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/adsbx.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db_create.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scraper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/api.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/commit.md" beforeDir="false" afterPath="$PROJECT_DIR$/commit.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dump1090/aircraft.json" beforeDir="false" afterPath="$PROJECT_DIR$/dump1090/aircraft.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/playground.py" beforeDir="false" afterPath="$PROJECT_DIR$/playground.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/populater.py" beforeDir="false" afterPath="$PROJECT_DIR$/populater.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reader.log" beforeDir="false" afterPath="$PROJECT_DIR$/reader.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reader.py" beforeDir="false" afterPath="$PROJECT_DIR$/reader.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scratchpad.txt" beforeDir="false" afterPath="$PROJECT_DIR$/scratchpad.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +82,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.reader">
+  <component name="RunManager" selected="Python.api">
     <configuration name="adsbx" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="FlightCompanion" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -202,8 +195,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.reader" />
         <item itemvalue="Python.api" />
+        <item itemvalue="Python.reader" />
         <item itemvalue="Python.playground" />
         <item itemvalue="Python.populater" />
         <item itemvalue="Python.adsbx" />
@@ -247,7 +240,7 @@
       <workItem from="1580328704504" duration="16764000" />
       <workItem from="1580726446171" duration="9421000" />
       <workItem from="1580905669035" duration="6595000" />
-      <workItem from="1581088487036" duration="17984000" />
+      <workItem from="1581088487036" duration="18668000" />
     </task>
     <servers />
   </component>
@@ -271,22 +264,22 @@
       <screen x="0" y="24" width="1920" height="993" />
     </state>
     <state x="723" y="137" key="#xdebugger.evaluate/0.24.1920.993@0.24.1920.993" timestamp="1580483307510" />
-    <state width="1874" height="416" key="GridCell.Tab.0.bottom" timestamp="1581695171906">
+    <state width="1874" height="416" key="GridCell.Tab.0.bottom" timestamp="1581696385286">
       <screen x="0" y="24" width="1920" height="993" />
     </state>
-    <state width="1874" height="416" key="GridCell.Tab.0.bottom/0.24.1920.993@0.24.1920.993" timestamp="1581695171906" />
-    <state width="1874" height="416" key="GridCell.Tab.0.center" timestamp="1581695171904">
+    <state width="1874" height="416" key="GridCell.Tab.0.bottom/0.24.1920.993@0.24.1920.993" timestamp="1581696385286" />
+    <state width="1874" height="416" key="GridCell.Tab.0.center" timestamp="1581696385285">
       <screen x="0" y="24" width="1920" height="993" />
     </state>
-    <state width="1874" height="416" key="GridCell.Tab.0.center/0.24.1920.993@0.24.1920.993" timestamp="1581695171904" />
-    <state width="1874" height="416" key="GridCell.Tab.0.left" timestamp="1581695171903">
+    <state width="1874" height="416" key="GridCell.Tab.0.center/0.24.1920.993@0.24.1920.993" timestamp="1581696385285" />
+    <state width="1874" height="416" key="GridCell.Tab.0.left" timestamp="1581696385285">
       <screen x="0" y="24" width="1920" height="993" />
     </state>
-    <state width="1874" height="416" key="GridCell.Tab.0.left/0.24.1920.993@0.24.1920.993" timestamp="1581695171903" />
-    <state width="1874" height="416" key="GridCell.Tab.0.right" timestamp="1581695171905">
+    <state width="1874" height="416" key="GridCell.Tab.0.left/0.24.1920.993@0.24.1920.993" timestamp="1581696385285" />
+    <state width="1874" height="416" key="GridCell.Tab.0.right" timestamp="1581696385286">
       <screen x="0" y="24" width="1920" height="993" />
     </state>
-    <state width="1874" height="416" key="GridCell.Tab.0.right/0.24.1920.993@0.24.1920.993" timestamp="1581695171905" />
+    <state width="1874" height="416" key="GridCell.Tab.0.right/0.24.1920.993@0.24.1920.993" timestamp="1581696385286" />
     <state x="420" y="172" key="SettingsEditor" timestamp="1581091097476">
       <screen x="0" y="24" width="1920" height="993" />
     </state>
@@ -303,8 +296,8 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/FlightCompanion$populater.coverage" NAME="populater Coverage Results" MODIFIED="1581529347608" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/FlightCompanion$adsbx.coverage" NAME="adsbx Coverage Results" MODIFIED="1580732815473" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/FlightCompanion$api.coverage" NAME="api Coverage Results" MODIFIED="1581695144035" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/FlightCompanion$api.coverage" NAME="api Coverage Results" MODIFIED="1581696385279" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/FlightCompanion$playground.coverage" NAME="playground Coverage Results" MODIFIED="1581531533468" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/FlightCompanion$reader.coverage" NAME="reader Coverage Results" MODIFIED="1581695147370" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/FlightCompanion$reader.coverage" NAME="reader Coverage Results" MODIFIED="1581696215748" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

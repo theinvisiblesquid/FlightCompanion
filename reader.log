@@ -2688,3 +2688,65 @@
 02-14 15:45 root         DEBUG    ('Flight', 'RYR60VB', 'is already in the database.')
 02-14 15:45 werkzeug     INFO     127.0.0.1 - - [14/Feb/2020 15:45:52] "POST /ep HTTP/1.1" 200 -
 02-14 15:45 urllib3.connectionpool DEBUG    http://localhost:5002 "POST /ep HTTP/1.1" 200 5
+02-14 16:02 root         DEBUG    ('Current information of incoming ADS-B data: ', {'now': 1572023427.0, 'messages': 2454, 'aircraft': [{'hex': '4005a5', 'squawk': '4215', 'flight': 'BAW178  ', 'lat': 51.917104, 'lon': -9.238796, 'nucp': 7, 'seen_pos': 0.4, 'altitude': 37000, 'vert_rate': 0, 'track': 93, 'speed': 585, 'messages': 1560, 'seen': 0.4, 'rssi': -34.3}, {'hex': '40661e', 'squawk': '3604', 'flight': 'GJAFT   ', 'altitude': 3300, 'messages': 328, 'seen': 6.2, 'rssi': -34.6}, {'hex': '4ca6fd', 'squawk': '7657', 'flight': 'RYR60VB', 'altitude': 1125, 'vert_rate': -768, 'track': 340, 'speed': 130, 'messages': 566, 'seen': 70.5, 'rssi': -35.2}]})
+02-14 16:02 urllib3.connectionpool DEBUG    Starting new HTTP connection (1): localhost:5002
+02-14 16:02 root         DEBUG    Live flights entered into adsb table
+02-14 16:02 root         DEBUG    ('Flight number from dump1090: ', 'BAW178  ')
+02-14 16:02 root         DEBUG    ('Flight', 'BAW178  ', 'is already in the database.')
+02-14 16:02 root         DEBUG    ('Flight number from dump1090: ', 'GJAFT   ')
+02-14 16:02 root         DEBUG    ('Flight', 'GJAFT   ', 'is already in the database.')
+02-14 16:02 root         DEBUG    ('Flight number from dump1090: ', 'RYR60VB')
+02-14 16:02 root         DEBUG    ('Flight', 'RYR60VB', 'is already in the database.')
+02-14 16:02 werkzeug     INFO     127.0.0.1 - - [14/Feb/2020 16:02:38] "POST /ep HTTP/1.1" 200 -
+02-14 16:02 urllib3.connectionpool DEBUG    http://localhost:5002 "POST /ep HTTP/1.1" 200 5
+02-14 16:02 root         DEBUG    ('Current information of incoming ADS-B data: ', {'now': 1572023427.0, 'messages': 2454, 'aircraft': [{'hex': '4005a5', 'squawk': '4215', 'flight': 'BAW178  ', 'lat': 51.917104, 'lon': -9.238796, 'nucp': 7, 'seen_pos': 0.4, 'altitude': 37000, 'vert_rate': 0, 'track': 93, 'speed': 585, 'messages': 1560, 'seen': 0.4, 'rssi': -34.3}, {'hex': '40661e', 'squawk': '3604', 'flight': 'GJAFT   ', 'altitude': 3300, 'messages': 328, 'seen': 6.2, 'rssi': -34.6}, {'hex': '4ca6fd', 'squawk': '7657', 'flight': 'RYR60VB', 'altitude': 1125, 'vert_rate': -768, 'track': 340, 'speed': 130, 'messages': 566, 'seen': 70.5, 'rssi': -35.2}]})
+02-14 16:02 urllib3.connectionpool DEBUG    Starting new HTTP connection (1): localhost:5002
+02-14 16:02 root         DEBUG    Live flights entered into adsb table
+02-14 16:02 root         DEBUG    ('Flight number from dump1090: ', 'BAW178  ')
+02-14 16:02 root         DEBUG    ('Flight', 'BAW178  ', 'is already in the database.')
+02-14 16:02 root         DEBUG    ('Flight number from dump1090: ', 'GJAFT   ')
+02-14 16:02 root         DEBUG    ('Flight', 'GJAFT   ', 'is already in the database.')
+02-14 16:02 root         DEBUG    ('Flight number from dump1090: ', 'RYR60VB')
+02-14 16:02 root         DEBUG    ('Flight', 'RYR60VB', 'is already in the database.')
+02-14 16:02 werkzeug     INFO     127.0.0.1 - - [14/Feb/2020 16:02:39] "POST /ep HTTP/1.1" 200 -
+02-14 16:02 urllib3.connectionpool DEBUG    http://localhost:5002 "POST /ep HTTP/1.1" 200 5
+02-14 16:02 root         DEBUG    Live flights entered into adsb table
+02-14 16:02 root         DEBUG    ('Flight number from dump1090: ', 'BAW178  ')
+02-14 16:02 root         DEBUG    ('Flight', 'BAW178  ', 'is already in the database.')
+02-14 16:02 root         DEBUG    ('Flight number from dump1090: ', 'GJAFT   ')
+02-14 16:02 root         DEBUG    ('Flight', 'GJAFT   ', 'is already in the database.')
+02-14 16:02 root         DEBUG    ('Flight number from dump1090: ', 'RYR60VB')
+02-14 16:02 root         DEBUG    ('Flight', 'RYR60VB', 'is already in the database.')
+02-14 16:02 werkzeug     INFO     127.0.0.1 - - [14/Feb/2020 16:02:57] "POST /ep HTTP/1.1" 200 -
+02-14 16:02 root         DEBUG    Live flights entered into adsb table
+02-14 16:02 root         DEBUG    ('Flight number from dump1090: ', 'BAW178  ')
+02-14 16:02 root         DEBUG    ('Flight', 'BAW178  ', 'is already in the database.')
+02-14 16:02 root         DEBUG    ('Flight number from dump1090: ', 'GJAFT   ')
+02-14 16:02 root         DEBUG    ('Flight', 'GJAFT   ', 'is already in the database.')
+02-14 16:02 root         DEBUG    ('Flight number from dump1090: ', 'RYR60VB')
+02-14 16:02 root         DEBUG    ('Flight', 'RYR60VB', 'is already in the database.')
+02-14 16:02 werkzeug     INFO     127.0.0.1 - - [14/Feb/2020 16:02:58] "POST /ep HTTP/1.1" 200 -
+02-14 16:02 root         DEBUG    Live flights entered into adsb table
+02-14 16:02 root         DEBUG    ('Flight number from dump1090: ', 'BAW178  ')
+02-14 16:02 root         DEBUG    ('Flight', 'BAW178  ', 'is already in the database.')
+02-14 16:02 root         DEBUG    ('Flight number from dump1090: ', 'GJAFT   ')
+02-14 16:02 root         DEBUG    ('Flight', 'GJAFT   ', 'is already in the database.')
+02-14 16:02 root         DEBUG    ('Flight number from dump1090: ', 'RYR60VB')
+02-14 16:02 root         DEBUG    ('Flight', 'RYR60VB', 'is already in the database.')
+02-14 16:02 werkzeug     INFO     127.0.0.1 - - [14/Feb/2020 16:02:59] "POST /ep HTTP/1.1" 200 -
+02-14 16:03 root         DEBUG    Live flights entered into adsb table
+02-14 16:03 root         DEBUG    ('Flight number from dump1090: ', 'BAW178  ')
+02-14 16:03 root         DEBUG    ('Flight', 'BAW178  ', 'is already in the database.')
+02-14 16:03 root         DEBUG    ('Flight number from dump1090: ', 'GJAFT   ')
+02-14 16:03 root         DEBUG    ('Flight', 'GJAFT   ', 'is already in the database.')
+02-14 16:03 root         DEBUG    ('Flight number from dump1090: ', 'RYR60VB')
+02-14 16:03 root         DEBUG    ('Flight', 'RYR60VB', 'is already in the database.')
+02-14 16:03 werkzeug     INFO     127.0.0.1 - - [14/Feb/2020 16:03:36] "POST /ep HTTP/1.1" 200 -
+02-14 16:03 root         DEBUG    Live flights entered into adsb table
+02-14 16:03 root         DEBUG    ('Flight number from dump1090: ', 'BAW178  ')
+02-14 16:03 root         DEBUG    ('Flight', 'BAW178  ', 'is already in the database.')
+02-14 16:03 root         DEBUG    ('Flight number from dump1090: ', 'GJAFT   ')
+02-14 16:03 root         DEBUG    ('Flight', 'GJAFT   ', 'is already in the database.')
+02-14 16:03 root         DEBUG    ('Flight number from dump1090: ', 'RYR60VB')
+02-14 16:03 root         DEBUG    ('Flight', 'RYR60VB', 'is already in the database.')
+02-14 16:03 werkzeug     INFO     127.0.0.1 - - [14/Feb/2020 16:03:37] "POST /ep HTTP/1.1" 200 -
